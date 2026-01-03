@@ -2,12 +2,10 @@
 
 Snake::Snake(const int x, const int y) : dx(0), dy(1) {
     body.push_back({x, y});
-    //std::cout << "Snake created at: " << x << ", " << y << std::endl;
 }
 
 void Snake::move() {
-    auto [x, y] = body[0]; // проверим, что тут
-    //std::cout << "Moving from: " << x << ", " << y << std::endl;
+    auto [x, y] = body[0];
 
     int newX = x + dx;
     int newY = y + dy;
@@ -43,22 +41,20 @@ const std::vector<std::pair<int, int>>& Snake::getBody() const {
 
 void Snake::setDirection(const int x, const int y) {
     // Не разрешаем разворот на 180
-    if ((x == 0 && y == 1 && dx == 0 && dy == -1) ||  // вправо ← влево
-        (x == 0 && y == -1 && dx == 0 && dy == 1) || // влево ← вправо
-        (x == 1 && y == 0 && dx == -1 && dy == 0) || // вниз ← вверх
-        (x == -1 && y == 0 && dx == 1 && dy == 0)) { // вверх ← вниз
-        return; // не меняем направление
+    if ((x == 0 && y == 1 && dx == 0 && dy == -1) ||
+        (x == 0 && y == -1 && dx == 0 && dy == 1) ||
+        (x == 1 && y == 0 && dx == -1 && dy == 0) ||
+        (x == -1 && y == 0 && dx == 1 && dy == 0)) {
+        return;
     }
     dx = x;
     dy = y;
 }
 
 int Snake::getDx() {
-    //std::cout << "getDx: " << dx << std::endl;
     return dx;
 }
 
 int Snake::getDy() {
-    //std::cout << "getDy: " << dy << std::endl;
     return dy;
 }

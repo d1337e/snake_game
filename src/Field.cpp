@@ -8,7 +8,6 @@ Field::Field(const int width, const int height) {
         throw std::invalid_argument("Values of Field can't be negative and 0!");
     }
     init();
-    //std::cout << "Field created with: " << this->width << "x" << this->height << std::endl;
 }
 
 void Field::init() {

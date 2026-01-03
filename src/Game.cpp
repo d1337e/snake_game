@@ -22,12 +22,10 @@ void Game::run() {
 
 void Game::logic() {
     auto head = snake.getBody()[0];
-    //std::cout << "Head position: " << head.first << ", " << head.second << std::endl;
     int nextX = head.first + snake.getDx();
     int nextY = head.second + snake.getDy();
-    //std::cout << "Current direction: " << snake.getDx() << ", " << snake.getDy() << std::endl;
+
     if (nextX < 0 || nextX >= field.getWidth() || nextY < 0 || nextY >= field.getHeight()) {
-        //std::cout << "Collision with wall at: " << nextX << ", " << nextY << std::endl;
         gameOver = true;
         return;
     }
@@ -37,13 +35,11 @@ void Game::logic() {
     auto newHead = snake.getBody()[0];
     auto foodPos = food.getPosition();
     if (newHead.first == foodPos.first && newHead.second == foodPos.second) {
-        //std::cout << "Food eaten!" << std::endl;
         snake.grow();
         food.generate(field.getWidth(), field.getHeight(), snake);
     }
 
     if (snake.checkSelfCollision()) {
-        //std::cout << "Self collision!" << std::endl;
         gameOver = true;
     }
 }
