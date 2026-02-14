@@ -1,7 +1,7 @@
 # 🐍 Snake Game Alpha 0.1
 
 A classic Snake game implemented in C++ for the purpose of verification my bad skills in programming
-In future I maybe update this ugly sh*t game idkkkk ya typoi
+In future I maybe update this ugly game idkkkk ya typoi
 
 ## ✨ Features
 - Very basic Snake gameplay
@@ -43,8 +43,3 @@ cd snake_game
 make
 make run
 ```
-
-## To do
-- **Add interactive menu**
-- **Add a primitive point system**
-- **Make the "project haha" cross-platform**
